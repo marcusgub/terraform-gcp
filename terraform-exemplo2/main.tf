@@ -6,16 +6,16 @@ terraform {
   }
 
    backend "gcs" {
-    bucket  = "barberoterraform"
+    bucket  = "bucket_manolo"
     prefix  = "terraform/state"
   }
   
 }
 
 provider "google" {
-  project = "barbero-devops-iac"
-  region  = "us-central1"
-  zone    = "us-central1-c"
+  project = "manolo-tech"
+  region  = "us-east1"
+  zone    = "us-east1-b"
 }
 
 resource "google_compute_network" "vpc_network" {
@@ -25,10 +25,10 @@ resource "google_compute_network" "vpc_network" {
 resource "google_compute_instance" "vm_instance" {
   name         = "terraform-instance"
   machine_type = "f1-micro"
-  tags = ["prod"]
+  tags = ["development"]
 
   labels = {
-    centro_custo = "${var.centro_custo_rh}"
+    centro_custo = "${var.centro_custo_IT}"
   }
 
   boot_disk {

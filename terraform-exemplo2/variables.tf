@@ -1,13 +1,13 @@
 variable "network_name" {
-  description = "Nome da Rede"
+  description = "network_dev"
   type        = string
   default     = "terraform-network"
 }
 
-variable "centro_custo_rh" {
-  description = "Nome da Rede"
+variable "centro_custo_IT" {
+  description = "development"
   type        = string
-  default     = "rh"
+  default     = "dev"
 }
 
 
